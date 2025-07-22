@@ -2,49 +2,59 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add New Depository</title>
     <link rel="stylesheet" href="new-depository.css" />
   </head>
   <body>
-    <main class="form-card">
-      <h2 class="form-title">Add New Depository</h2>
-      <p class="form-subtitle">
-        Enter the details for the new depository institute
-      </p>
-
-      <form>
-        <label class="field-label" for="institute-name">Institute Name *</label>
-        <input class="input-field" id="institute-name" type="text" required />
-
-        <label class="field-label" for="country">Country *</label>
-        <select class="input-field" id="country" required>
-          <option value="">India</option>
-        </select>
-
-        <label class="field-label" for="regulatory-body"
-          >Regulatory Body *</label
-        >
-        <select class="input-field" id="regulatory-body" required>
-          <option value="">SEBI</option>
-        </select>
-
-        <label class="field-label" for="status">Status *</label>
-        <select class="input-field" id="status" required>
-          <option value="">Active</option>
-        </select>
-
-        <!-- NEW: Users field -->
-        <label class="field-label" for="users">Users *</label>
-        <div class="users-row">
-          <!-- <span class="chip">Akash Sharma</span> -->
-          <!-- <button type="button" class="add-user-btn">+ Add user</button> -->
+    <div class="main-container">
+      <div class="header-section">
+        <div class="header-content">
+          <h2 class="form-title">Add New Depository</h2>
+          <div class="form-subtitle">
+            Enter the details for the new depository institute
+          </div>
         </div>
+        <button id="back-to-institutes" class="back-button">
+          Back to Institutes
+        </button>
+      </div>
+      <main class="form-card">
+        <form>
+          <label class="field-label" for="institute-name"
+            >Institute Name *</label
+          >
+          <input class="input-field" id="institute-name" type="text" required />
 
-        <div class="actions">
-          <button type="button" class="btn-cancel">Cancel</button>
-          <button type="submit" class="btn-add">Add</button>
-        </div>
-      </form>
-    </main>
+          <label class="field-label" for="country">Country *</label>
+          <select class="input-field" id="country" required>
+            <option value="">India</option>
+          </select>
+
+          <label class="field-label" for="regulatory-body"
+            >Regulatory Body *</label
+          >
+          <select class="input-field" id="regulatory-body" required>
+            <option value="">SEBI</option>
+          </select>
+
+          <label class="field-label" for="status">Status *</label>
+          <select class="input-field" id="status" required>
+            <option value="">Active</option>
+          </select>
+
+          <label class="field-label" for="users">Users *</label>
+          <div class="users-row">
+            <!-- <span class="chip">Akash Sharma</span> -->
+            <!-- <button type="button" class="add-user-btn">+ Add user</button> -->
+          </div>
+
+          <div class="actions">
+            <button type="submit" class="btn-add">Add Institute</button>
+            <button type="button" class="btn-cancel">Cancel</button>
+          </div>
+        </form>
+      </main>
+    </div>
   </body>
 </html>

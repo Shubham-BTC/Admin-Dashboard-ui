@@ -1,4 +1,3 @@
-/* ---- RESET ---- */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,68 +7,119 @@
 body {
   background: #f5f7fa;
   font-family: "Segoe UI", system-ui, sans-serif;
+  color: #333;
+  min-height: 100vh;
+}
+
+.main-container {
+  max-width: 956px;
+  margin: 40px auto;
+  padding: 20px;
+  width: 100%;
+}
+
+/* Header section styles */
+.header-section {
   display: flex;
-  justify-content: center;
-  padding: 48px 16px;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
-/* ---- CARD ---- */
-.form-card {
-  width: 956px;                 /* exact width from Figma */
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  padding: 24px 24px 32px;
+.header-content {
+  flex: 1;
+  min-width: 250px;
 }
 
-/* ---- TYPOGRAPHY ---- */
 .form-title {
-  font-size: 24px;
-  line-height: 24px;
-  letter-spacing: -0.6px;
-  font-weight: 400;
-  color: #1e293b;
-  margin-bottom: 8px;
+  margin: 0;
+  font-size: 28.5px;
+  font-weight: 700;
+  line-height: 36px;
+  color: #595959;
 }
 
 .form-subtitle {
+  margin: 4px 0 20px;
+  color: #ababab;
   font-size: 16px;
-  line-height: 20px;
+  line-height: 24px;
+}
+
+.back-button {
+  width: 189px;
+  height: 46px;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  background: #fafafa;
+  font-size: 14px;
   color: #475569;
-  margin-bottom: 32px;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.back-button:hover {
+  background: #f1f5f9;
+  border-color: #d1d5db;
+}
+
+.form-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 24px;
+  margin-top: 16px;
+  width: 100%;
 }
 
 .field-label {
   display: block;
-  font-size: 16px;
-  line-height: 14px;
-  color: #1e293b;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 500;
 }
 
-/* ---- INPUTS ---- */
 .input-field {
   width: 100%;
-  height: 43px;                 /* Figma height of Combobox / Input */
+  height: 43px;
   padding: 0 12px;
   font-size: 16px;
   border: 1px solid #e0e6eb;
   border-radius: 6px;
   background: #fafafa;
   margin-bottom: 24px;
+  transition: border-color 0.2s ease;
 }
 
 .input-field:focus {
   outline: none;
-  border-color: #6366f1;
+  border-color: #3b82f6;
 }
 
-/* ---- BUTTONS ---- */
+.users-row {
+  width: 100%;
+  min-height: 43px;
+  padding: 0 12px;
+  border: 1px solid #e0e6eb;
+  border-radius: 6px;
+  background: #fafafa;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+}
+
 .actions {
   display: flex;
   gap: 16px;
   justify-content: flex-end;
-  margin-top: 8px;
+  margin-top: 24px;
+  flex-wrap: wrap;
 }
 
 .btn-cancel,
@@ -79,22 +129,320 @@ body {
   font-size: 16px;
   border-radius: 6px;
   cursor: pointer;
-  border: 1px solid #e0e6eb;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  min-width: 120px;
 }
 
 .btn-cancel {
-  width: 103px;
   background: #fafafa;
   color: #475569;
+  border: 1px solid #e0e6eb;
+}
+
+.btn-cancel:hover {
+  background: #f1f5f9;
+  border-color: #d1d5db;
 }
 
 .btn-add {
-  width: 179px;
   background: #eb1414;
   color: #fff;
   border: none;
 }
 
 .btn-add:hover {
-  background: #c41111;
+  background: #dc2626;
+}
+
+@media (max-width: 1200px) {
+  .main-container {
+    max-width: 90%;
+    margin: 32px auto;
+  }
+}
+
+@media (max-width: 1024px) {
+  .main-container {
+    margin: 20px auto;
+    padding: 16px;
+    max-width: 95%;
+  }
+
+  .header-section {
+    margin-bottom: 20px;
+    gap: 12px;
+  }
+
+  .form-title {
+    font-size: 26px;
+    line-height: 32px;
+  }
+
+  .form-card {
+    padding: 20px;
+  }
+
+  .back-button {
+    width: 160px;
+    height: 44px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    margin: 16px auto;
+    padding: 12px;
+    max-width: 100%;
+  }
+
+  .header-section {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .header-content {
+    min-width: auto;
+  }
+
+  .form-title {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .form-subtitle {
+    font-size: 15px;
+    line-height: 22px;
+    margin-bottom: 16px;
+  }
+
+  .back-button {
+    width: 100%;
+    max-width: 200px;
+    align-self: flex-start;
+  }
+
+  .form-card {
+    padding: 18px;
+    margin-top: 12px;
+  }
+
+  .input-field {
+    height: 42px;
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+
+  .users-row {
+    min-height: 42px;
+    margin-bottom: 20px;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  .btn-cancel,
+  .btn-add {
+    width: 100%;
+    height: 44px;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-container {
+    margin: 12px auto;
+    padding: 8px;
+    max-width: 100%;
+  }
+
+  .header-section {
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .form-title {
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  .form-subtitle {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 12px;
+  }
+
+  .back-button {
+    height: 42px;
+    font-size: 12px;
+    max-width: 180px;
+  }
+
+  .form-card {
+    padding: 16px;
+    margin-top: 8px;
+  }
+
+  .field-label {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  .input-field {
+    height: 40px;
+    font-size: 16px;
+    margin-bottom: 16px;
+    padding: 0 10px;
+  }
+
+  .users-row {
+    min-height: 40px;
+    margin-bottom: 16px;
+    padding: 0 10px;
+  }
+
+  .actions {
+    margin-top: 20px;
+    gap: 10px;
+  }
+
+  .btn-cancel,
+  .btn-add {
+    height: 42px;
+    font-size: 15px;
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  .main-container {
+    margin: 8px auto;
+    padding: 6px;
+  }
+
+  .header-section {
+    gap: 10px;
+  }
+
+  .form-title {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .form-subtitle {
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  .back-button {
+    height: 40px;
+    font-size: 11px;
+    max-width: 160px;
+  }
+
+  .form-card {
+    padding: 14px;
+  }
+
+  .field-label {
+    font-size: 12px;
+  }
+
+  .input-field {
+    height: 38px;
+    font-size: 16px;
+    padding: 0 8px;
+  }
+
+  .users-row {
+    min-height: 38px;
+    padding: 0 8px;
+  }
+
+  .btn-cancel,
+  .btn-add {
+    height: 40px;
+    font-size: 14px;
+    padding: 0 12px;
+  }
+}
+
+@media (max-width: 320px) {
+  .main-container {
+    margin: 6px auto;
+    padding: 4px;
+  }
+
+  .form-title {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .form-subtitle {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .back-button {
+    height: 38px;
+    font-size: 10px;
+    max-width: 140px;
+  }
+
+  .form-card {
+    padding: 12px;
+  }
+
+  .input-field {
+    height: 36px;
+    font-size: 16px;
+    padding: 0 6px;
+  }
+
+  .users-row {
+    min-height: 36px;
+    padding: 0 6px;
+  }
+
+  .btn-cancel,
+  .btn-add {
+    height: 38px;
+    font-size: 13px;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+  .main-container {
+    margin: 8px auto;
+  }
+
+  .header-section {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .back-button {
+    width: auto;
+    min-width: 140px;
+    max-width: 180px;
+  }
+
+  .form-card {
+    padding: 16px;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .input-field,
+  .btn-cancel,
+  .btn-add,
+  .back-button {
+    border-width: 0.5px;
+  }
 }

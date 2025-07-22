@@ -1,52 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="depository-institutes.css" />
-  <title>Depository Institutes</title>
-</head>
-<body>
-  <div class="depository-container">
-    <div class="title-row">
-      <h1>Depository Institutes</h1>
-      <button class="add-btn">Add New Institute</button>
-    </div>
-    <p class="subtitle">Manage depository information</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Depository Institutes</title>
+    <link rel="stylesheet" href="depository-institutes.css" />
+  </head>
+  <body>
+    <main class="depository-wrapper">
+      <section class="depository-header">
+        <div>
+          <h2>Depository Institutes</h2>
+          <p>Manage depository information</p>
+        </div>
+        <button>Add new Institute</button>
+      </section>
 
-    <div class="search-section">
-      <input type="text" placeholder="Search institutes by email or phone number..." />
-      <div class="search-buttons">
-        <button class="filter-btn">Filter</button>
-        <button class="search-btn">Search</button>
-      </div>
-    </div>
+      <section class="depository-controls" style="position: relative">
+        <input
+          type="text"
+          class="search-input"
+          placeholder="Search institutes by email or phone number..."
+        />
+        <div class="action-buttons">
+          <button class="filter-btn" style="border: 1px solid #e2e8f0">
+            Filter
+          </button>
+          <button class="search-btn" style="border: 1px solid red">
+            Search
+          </button>
+        </div>
+      </section>
 
-    <div class="institutes-list">
-      <h2>All Depository Institutes</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Institute Name</th>
-            <th>Country</th>
-            <th>Regulatory Body</th>
-            <th>Email Addresses</th>
-            <th>Contact Number</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>National Securities Depository Limited (NSDL)</td>
-            <td>India</td>
-            <td>SEBI</td>
-            <td>example@gmail.com</td>
-            <td>+91 22 2499 4200</td>
-            <td><span class="status active">Active</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</body>
+      <section class="depository-table-section">
+        <h2 style="margin-bottom: 13px">All Depository Institutes</h2>
+        <p class="table-count" style="margin-top: 0; margin-bottom: 35px">
+          3 institute(s) found
+        </p>
+        <table class="depository-table" style="border-collapse: collapse">
+          <thead>
+            <tr>
+              <th>Institute Name</th>
+              <th>Country</th>
+              <th>Regulatory Body</th>
+              <th>Email Addresses</th>
+              <th>Contact Number</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>National Securities Depository Limited (NSDL)</td>
+              <td>India</td>
+              <td>SEBI</td>
+              <td>example@gmail.com<br />example@gmail.com</td>
+              <td>+91 22 2499 4200</td>
+              <td><span class="status active">Active</span></td>
+              <td>
+                <a href="#" class="edit">edit</a>
+                <a href="#" class="delete">soft delete</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Central Depository Services Limited (CDSL)</td>
+              <td>India</td>
+              <td>SEBI</td>
+              <td>example@gmail.com<br />example@gmail.com</td>
+              <td>+91 22 2305 8100</td>
+              <td><span class="status active">Active</span></td>
+              <td>
+                <a href="#" class="edit">edit</a>
+                <a href="#" class="delete">soft delete</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      </style>
+    </main>
+  </body>
 </html>
